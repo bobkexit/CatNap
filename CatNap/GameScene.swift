@@ -27,10 +27,24 @@ protocol EventListenerNode {
     func didMoveToScene()
 }
 
+protocol InteractiveNode {
+    func interact()
+}
+
+struct PhysicsCategory {
+    static let none: UInt32 = 0 // 0
+    static let cat: UInt32 = 0b1 // 1
+    static let block: UInt32 = 0b10 // 2
+    static let bed: UInt32 = 0b100 // 4
+    static let edge: UInt32 = 0b1000 // 8
+    static let label: UInt32 = 0b10000 // 16
+}
+
 class GameScene: SKScene {
     
     var bedNode: BedNode!
     var catNode: CatNode!
+    var playable = true
     
     override func didMove(to view: SKView) {
         isPaused = true
@@ -46,7 +60,7 @@ class GameScene: SKScene {
         
         bedNode = childNode(withName: "bed") as? BedNode
         catNode = childNode(withName: "//cat_body") as? CatNode
-    
+        
         SKTAudio.sharedInstance().playBackgroundMusic("backgroundMusic.mp3")
     }
     
@@ -62,6 +76,44 @@ class GameScene: SKScene {
         let playableRect = CGRect(x: 0, y: playableMargin,
                                   width: size.width, height: size.height - playableMargin * 2)
         
-        physicsBody  = SKPhysicsBody(edgeLoopFrom: playableRect)
+        physicsBody = SKPhysicsBody(edgeLoopFrom: playableRect)
+        physicsWorld.contactDelegate = self
+        physicsBody?.categoryBitMask = PhysicsCategory.edge
+    }
+    
+    private func inGameMessage(text: String) {
+        let message = MessageNode(message: text)
+        message.position = CGPoint(x: frame.midX, y: frame.midY)
+        addChild(message)
+    }
+    
+    private func newGame() {
+        let scene = GameScene(fileNamed: "GameScene")
+        scene!.scaleMode = scaleMode
+        view?.presentScene(scene)
+    }
+    
+    private func lose() {
+        playable = false
+        SKTAudio.sharedInstance().pauseBackgroundMusic()
+        SKTAudio.sharedInstance().playSoundEffect("lose.mp3")
+        
+        inGameMessage(text: "Try again...")
+        
+        run(.afterDelay(5, runBlock: newGame))
+        
+        catNode.wakeUp()
+    }
+}
+
+extension GameScene: SKPhysicsContactDelegate {
+    func didBegin(_ contact: SKPhysicsContact) {
+        guard playable else { return }
+        let collision = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
+        if collision == PhysicsCategory.cat | PhysicsCategory.bed {
+            print("SUCCESS")
+        } else if collision == PhysicsCategory.cat | PhysicsCategory.edge {
+            lose()
+        }
     }
 }
