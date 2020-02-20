@@ -27,4 +27,23 @@ class CatNode: SKSpriteNode, EventListenerNode {
         catAwake.move(toParent: self)
         catAwake.position = CGPoint(x: -30, y: 100)
     }
+    
+    func curlAt(_ scenePoint: CGPoint) {
+        parent!.physicsBody = nil
+        children.forEach { $0.removeFromParent() }
+        texture = nil
+        color = .clear
+        guard let catCurl = SKSpriteNode(fileNamed: "CatCurl")?.childNode(withName: "cat_curl") else { return }
+        catCurl.move(toParent: self)
+        catCurl.position = CGPoint(x: -30, y: 100)
+        
+        var localPoint = parent!.convert(scenePoint, from: scene!)
+        localPoint.y += frame.size.height/3
+        
+        let actions: [SKAction] = [
+            .move(to: localPoint, duration: 0.66),
+            .rotate(toAngle: -parent!.zRotation, duration: 0.5)
+        ]
+        run(.group(actions))
+    }
 }

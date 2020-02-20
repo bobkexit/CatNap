@@ -104,14 +104,35 @@ class GameScene: SKScene {
         
         catNode.wakeUp()
     }
+    
+    private func win() {
+        playable = false
+        
+        SKTAudio.sharedInstance().pauseBackgroundMusic()
+        SKTAudio.sharedInstance().playSoundEffect("win.mp3")
+        
+        inGameMessage(text: "Nice job!")
+        
+        run(.afterDelay(5, runBlock: newGame))
+        
+        catNode.curlAt(bedNode.position)
+    }
 }
 
 extension GameScene: SKPhysicsContactDelegate {
     func didBegin(_ contact: SKPhysicsContact) {
-        guard playable else { return }
+        
         let collision = contact.bodyA.categoryBitMask | contact.bodyB.categoryBitMask
+        
+        if collision == PhysicsCategory.label | PhysicsCategory.edge {
+            let labelNode = contact.bodyA.categoryBitMask == PhysicsCategory.label ? contact.bodyA.node : contact.bodyB.node
+            (labelNode as? MessageNode)?.didBounce()
+        }
+        
+        guard playable else { return }
+        
         if collision == PhysicsCategory.cat | PhysicsCategory.bed {
-            print("SUCCESS")
+            win()
         } else if collision == PhysicsCategory.cat | PhysicsCategory.edge {
             lose()
         }
