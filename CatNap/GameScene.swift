@@ -32,12 +32,14 @@ protocol InteractiveNode {
 }
 
 struct PhysicsCategory {
-    static let none: UInt32 = 0 // 0
-    static let cat: UInt32 = 0b1 // 1
-    static let block: UInt32 = 0b10 // 2
-    static let bed: UInt32 = 0b100 // 4
-    static let edge: UInt32 = 0b1000 // 8
-    static let label: UInt32 = 0b10000 // 16
+  static let none:  UInt32 = 0
+  static let cat:   UInt32 = 0b1 // 1
+  static let block: UInt32 = 0b10 // 2
+  static let bed:   UInt32 = 0b100 // 4
+  static let edge:  UInt32 = 0b1000 // 8
+  static let label: UInt32 = 0b10000 // 16
+  static let spring:UInt32 = 0b100000 // 32
+  static let hook:  UInt32 = 0b1000000 // 64
 }
 
 class GameScene: SKScene {
@@ -45,6 +47,7 @@ class GameScene: SKScene {
     var bedNode: BedNode!
     var catNode: CatNode!
     var playable = true
+    var currentLevel: Int = 0
     
     override func didMove(to view: SKView) {
         isPaused = true
@@ -68,6 +71,13 @@ class GameScene: SKScene {
         // Called before each frame is rendered
     }
     
+    override func didSimulatePhysics() {
+        if !playable { return }
+        if abs(catNode.parent!.zRotation) > CGFloat(25).degreesToRadians() {
+            lose()
+        }
+    }
+    
     private func setupPhysicsBody() {
         let maxAspectRatio: CGFloat = 16.0/9.0
         let maxAspectRatioHeight = size.width / maxAspectRatio
@@ -88,9 +98,7 @@ class GameScene: SKScene {
     }
     
     private func newGame() {
-        let scene = GameScene(fileNamed: "GameScene")
-        scene!.scaleMode = scaleMode
-        view?.presentScene(scene)
+        view?.presentScene(GameScene.level(levelNum: currentLevel))
     }
     
     private func lose() {
@@ -116,6 +124,13 @@ class GameScene: SKScene {
         run(.afterDelay(5, runBlock: newGame))
         
         catNode.curlAt(bedNode.position)
+    }
+    
+    class func level(levelNum: Int) -> GameScene? {
+        let scene = GameScene(fileNamed: "Level\(levelNum)")!
+        scene.currentLevel = levelNum
+        scene.scaleMode = .aspectFill
+        return scene
     }
 }
 
