@@ -19,6 +19,7 @@
 		353BE47C23F30A74000A2026 /* SKTAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353BE47023F30A73000A2026 /* SKTAudio.swift */; };
 		353BE47D23F30A74000A2026 /* Vector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353BE47123F30A73000A2026 /* Vector3.swift */; };
 		353BE47E23F30A74000A2026 /* CGFloat+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353BE47223F30A73000A2026 /* CGFloat+Extensions.swift */; };
+		3543947C2406A9AB00999611 /* HookBaseNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3543947B2406A9AB00999611 /* HookBaseNode.swift */; };
 		3553805A23DE2D6800B39ABD /* Level1.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3553805923DE2D6800B39ABD /* Level1.sks */; };
 		355FE42923D62E8900FEE66C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355FE42823D62E8900FEE66C /* AppDelegate.swift */; };
 		355FE42D23D62E8900FEE66C /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 355FE42C23D62E8900FEE66C /* Actions.sks */; };
@@ -56,6 +57,7 @@
 		353BE47023F30A73000A2026 /* SKTAudio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKTAudio.swift; sourceTree = "<group>"; };
 		353BE47123F30A73000A2026 /* Vector3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector3.swift; sourceTree = "<group>"; };
 		353BE47223F30A73000A2026 /* CGFloat+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGFloat+Extensions.swift"; sourceTree = "<group>"; };
+		3543947B2406A9AB00999611 /* HookBaseNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HookBaseNode.swift; sourceTree = "<group>"; };
 		3553805923DE2D6800B39ABD /* Level1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level1.sks; sourceTree = "<group>"; };
 		355FE42523D62E8900FEE66C /* CatNap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatNap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		355FE42823D62E8900FEE66C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 				3591B76E23FD1263002EE9F9 /* BlockNode.swift */,
 				3591B77023FD1B71002EE9F9 /* MessageNode.swift */,
 				35E48E3823FFBB810060D0D4 /* SpringNode.swift */,
+				3543947B2406A9AB00999611 /* HookBaseNode.swift */,
 			);
 			path = Nodes;
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 				35CBB6CB23E2088E0015B2DA /* BedNode.swift in Sources */,
 				353BE47523F30A74000A2026 /* Int+Extensions.swift in Sources */,
 				355FE43123D62E8900FEE66C /* GameViewController.swift in Sources */,
+				3543947C2406A9AB00999611 /* HookBaseNode.swift in Sources */,
 				35E48E3923FFBB810060D0D4 /* SpringNode.swift in Sources */,
 				353BE47E23F30A74000A2026 /* CGFloat+Extensions.swift in Sources */,
 				353BE47D23F30A74000A2026 /* Vector3.swift in Sources */,
