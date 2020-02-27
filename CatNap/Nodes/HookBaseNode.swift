@@ -53,6 +53,16 @@ class HookBaseNode: SKSpriteNode, EventListenerNode {
         ropeNode.constraints = [orientConstraint]
         
         hookNode.physicsBody!.applyImpulse(CGVector(dx: 50, dy: 0))
+        
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(catTapped),
+            name: CatNode.kCatTappedNotification,
+            object: nil)
+    }
+    
+    @objc func catTapped() {
+        if isHooked { releaseCat() }
     }
     
     func hookCat(catpPysicsBody: SKPhysicsBody) {
@@ -70,5 +80,14 @@ class HookBaseNode: SKSpriteNode, EventListenerNode {
         scene!.physicsWorld.add(hookJoint)
         
         hookNode.physicsBody!.contactTestBitMask = PhysicsCategory.none
+    }
+    
+    func releaseCat() {
+        hookNode.physicsBody!.categoryBitMask = PhysicsCategory.none
+        hookNode.physicsBody!.contactTestBitMask = PhysicsCategory.none
+        hookJoint.bodyA.node!.zRotation = 0
+        hookJoint.bodyB.node!.zRotation = 0
+        scene!.physicsWorld.remove(hookJoint)
+        hookJoint = nil
     }
 }
