@@ -65,12 +65,18 @@ class GameScene: SKScene {
         bedNode = childNode(withName: "bed") as? BedNode
         catNode = childNode(withName: "//cat_body") as? CatNode
         
-        //SKTAudio.sharedInstance().playBackgroundMusic("backgroundMusic.mp3")
-//        let rotationConstraint: SKConstraint = .zRotation(
-//            SKRange(lowerLimit: -π/4, upperLimit: π/4))
-//        catNode.parent!.constraints = [rotationConstraint]
+        SKTAudio.sharedInstance().playBackgroundMusic("backgroundMusic.mp3")
         
         hookBaseNode = childNode(withName: "hookBase") as? HookBaseNode
+        
+        if let seesawBase = childNode(withName: "seesawBase"),
+            let seesaw = childNode(withName: "seesaw")  {
+            
+            let pinJoint = SKPhysicsJointPin.joint(withBodyA: seesawBase.physicsBody!,
+                                                   bodyB: seesaw.physicsBody!,
+                                                   anchor: seesawBase.position)
+            physicsWorld.add(pinJoint)
+        }
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -109,6 +115,10 @@ class GameScene: SKScene {
     }
     
     private func lose() {
+//        if currentLevel > 1 {
+//            currentLevel -= 1
+//        }
+        
         playable = false
         SKTAudio.sharedInstance().pauseBackgroundMusic()
         SKTAudio.sharedInstance().playSoundEffect("lose.mp3")
@@ -121,6 +131,10 @@ class GameScene: SKScene {
     }
     
     private func win() {
+        if currentLevel < 3 {
+            currentLevel += 1
+        }
+        
         playable = false
         
         SKTAudio.sharedInstance().pauseBackgroundMusic()
