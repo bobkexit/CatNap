@@ -24,6 +24,12 @@
 		354394802407B8FF00999611 /* StoneNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3543947F2407B8FF00999611 /* StoneNode.swift */; };
 		3543948224095B2600999611 /* Level4.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3543948124095B2600999611 /* Level4.sks */; };
 		3553805A23DE2D6800B39ABD /* Level1.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3553805923DE2D6800B39ABD /* Level1.sks */; };
+		35576430240D05BA001A49AE /* discolights-loop.mov in Resources */ = {isa = PBXBuildFile; fileRef = 3557642E240D05BA001A49AE /* discolights-loop.mov */; };
+		35576431240D05BA001A49AE /* disco-sound.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 3557642F240D05BA001A49AE /* disco-sound.m4a */; };
+		35576434240D05C5001A49AE /* Level5.sks in Resources */ = {isa = PBXBuildFile; fileRef = 35576432240D05C5001A49AE /* Level5.sks */; };
+		35576435240D05C5001A49AE /* Level6.sks in Resources */ = {isa = PBXBuildFile; fileRef = 35576433240D05C5001A49AE /* Level6.sks */; };
+		35576437240D0734001A49AE /* PictureNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35576436240D0734001A49AE /* PictureNode.swift */; };
+		35576439240D09DF001A49AE /* DiscoBallNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35576438240D09DF001A49AE /* DiscoBallNode.swift */; };
 		355FE42923D62E8900FEE66C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355FE42823D62E8900FEE66C /* AppDelegate.swift */; };
 		355FE42D23D62E8900FEE66C /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 355FE42C23D62E8900FEE66C /* Actions.sks */; };
 		355FE42F23D62E8900FEE66C /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355FE42E23D62E8900FEE66C /* GameScene.swift */; };
@@ -65,6 +71,12 @@
 		3543947F2407B8FF00999611 /* StoneNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoneNode.swift; sourceTree = "<group>"; };
 		3543948124095B2600999611 /* Level4.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level4.sks; sourceTree = "<group>"; };
 		3553805923DE2D6800B39ABD /* Level1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level1.sks; sourceTree = "<group>"; };
+		3557642E240D05BA001A49AE /* discolights-loop.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "discolights-loop.mov"; sourceTree = "<group>"; };
+		3557642F240D05BA001A49AE /* disco-sound.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "disco-sound.m4a"; sourceTree = "<group>"; };
+		35576432240D05C5001A49AE /* Level5.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level5.sks; sourceTree = "<group>"; };
+		35576433240D05C5001A49AE /* Level6.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level6.sks; sourceTree = "<group>"; };
+		35576436240D0734001A49AE /* PictureNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureNode.swift; sourceTree = "<group>"; };
+		35576438240D09DF001A49AE /* DiscoBallNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoBallNode.swift; sourceTree = "<group>"; };
 		355FE42523D62E8900FEE66C /* CatNap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatNap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		355FE42823D62E8900FEE66C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		355FE42C23D62E8900FEE66C /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
@@ -120,6 +132,15 @@
 			path = SKTUtils;
 			sourceTree = "<group>";
 		};
+		3557642D240D05BA001A49AE /* media */ = {
+			isa = PBXGroup;
+			children = (
+				3557642E240D05BA001A49AE /* discolights-loop.mov */,
+				3557642F240D05BA001A49AE /* disco-sound.m4a */,
+			);
+			path = media;
+			sourceTree = "<group>";
+		};
 		355FE41C23D62E8900FEE66C = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +164,7 @@
 				35CBB6CC23E20A4C0015B2DA /* Nodes */,
 				355FE44D23D795E700FEE66C /* Scenes */,
 				355FE44023D6308300FEE66C /* Sounds */,
+				3557642D240D05BA001A49AE /* media */,
 				355FE42823D62E8900FEE66C /* AppDelegate.swift */,
 				355FE42C23D62E8900FEE66C /* Actions.sks */,
 				355FE42E23D62E8900FEE66C /* GameScene.swift */,
@@ -174,6 +196,8 @@
 				35E48E3623FFB6790060D0D4 /* Level2.sks */,
 				3543947D2407B24600999611 /* Level3.sks */,
 				3543948124095B2600999611 /* Level4.sks */,
+				35576432240D05C5001A49AE /* Level5.sks */,
+				35576433240D05C5001A49AE /* Level6.sks */,
 				35B721F523DD79D600791147 /* Cat.sks */,
 				35EA182523DF5EDF00E24804 /* CatCurl.sks */,
 				35EA182723DF616800E24804 /* CatWakeUp.sks */,
@@ -191,6 +215,8 @@
 				35E48E3823FFBB810060D0D4 /* SpringNode.swift */,
 				3543947B2406A9AB00999611 /* HookBaseNode.swift */,
 				3543947F2407B8FF00999611 /* StoneNode.swift */,
+				35576436240D0734001A49AE /* PictureNode.swift */,
+				35576438240D09DF001A49AE /* DiscoBallNode.swift */,
 			);
 			path = Nodes;
 			sourceTree = "<group>";
@@ -259,16 +285,20 @@
 				3553805A23DE2D6800B39ABD /* Level1.sks in Resources */,
 				35EA182823DF616800E24804 /* CatWakeUp.sks in Resources */,
 				3543948224095B2600999611 /* Level4.sks in Resources */,
+				35576430240D05BA001A49AE /* discolights-loop.mov in Resources */,
+				35576431240D05BA001A49AE /* disco-sound.m4a in Resources */,
 				35E48E3723FFB6790060D0D4 /* Level2.sks in Resources */,
 				35EA182623DF5EDF00E24804 /* CatCurl.sks in Resources */,
 				355FE44823D6308300FEE66C /* win.mp3 in Resources */,
 				355FE43923D62E8C00FEE66C /* LaunchScreen.storyboard in Resources */,
+				35576434240D05C5001A49AE /* Level5.sks in Resources */,
 				3543947E2407B24600999611 /* Level3.sks in Resources */,
 				355FE44623D6308300FEE66C /* mrreow.mp3 in Resources */,
 				355FE44723D6308300FEE66C /* pop.mp3 in Resources */,
 				355FE44A23D6308300FEE66C /* backgroundMusic.mp3 in Resources */,
 				355FE42D23D62E8900FEE66C /* Actions.sks in Resources */,
 				35B721F623DD79D600791147 /* Cat.sks in Resources */,
+				35576435240D05C5001A49AE /* Level6.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,11 +312,13 @@
 				355FE42F23D62E8900FEE66C /* GameScene.swift in Sources */,
 				3591B77123FD1B71002EE9F9 /* MessageNode.swift in Sources */,
 				353BE47723F30A74000A2026 /* SKAction+Extensions.swift in Sources */,
+				35576437240D0734001A49AE /* PictureNode.swift in Sources */,
 				353BE47623F30A74000A2026 /* SKTTimingFunctions.swift in Sources */,
 				353BE47423F30A74000A2026 /* CGVector+Extensions.swift in Sources */,
 				353BE47A23F30A74000A2026 /* CGPoint+Extensions.swift in Sources */,
 				353BE47823F30A74000A2026 /* SKAction+SpecialEffects.swift in Sources */,
 				354394802407B8FF00999611 /* StoneNode.swift in Sources */,
+				35576439240D09DF001A49AE /* DiscoBallNode.swift in Sources */,
 				353BE47C23F30A74000A2026 /* SKTAudio.swift in Sources */,
 				353BE47923F30A74000A2026 /* SKNode+Extensions.swift in Sources */,
 				353BE47B23F30A74000A2026 /* SKTEffects.swift in Sources */,
