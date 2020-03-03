@@ -23,6 +23,7 @@
 		3543947E2407B24600999611 /* Level3.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3543947D2407B24600999611 /* Level3.sks */; };
 		354394802407B8FF00999611 /* StoneNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3543947F2407B8FF00999611 /* StoneNode.swift */; };
 		3543948224095B2600999611 /* Level4.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3543948124095B2600999611 /* Level4.sks */; };
+		35488FF9240E537D0032542B /* HintNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35488FF8240E537D0032542B /* HintNode.swift */; };
 		3553805A23DE2D6800B39ABD /* Level1.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3553805923DE2D6800B39ABD /* Level1.sks */; };
 		35576430240D05BA001A49AE /* discolights-loop.mov in Resources */ = {isa = PBXBuildFile; fileRef = 3557642E240D05BA001A49AE /* discolights-loop.mov */; };
 		35576431240D05BA001A49AE /* disco-sound.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 3557642F240D05BA001A49AE /* disco-sound.m4a */; };
@@ -70,6 +71,7 @@
 		3543947D2407B24600999611 /* Level3.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level3.sks; sourceTree = "<group>"; };
 		3543947F2407B8FF00999611 /* StoneNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoneNode.swift; sourceTree = "<group>"; };
 		3543948124095B2600999611 /* Level4.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level4.sks; sourceTree = "<group>"; };
+		35488FF8240E537D0032542B /* HintNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintNode.swift; sourceTree = "<group>"; };
 		3553805923DE2D6800B39ABD /* Level1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level1.sks; sourceTree = "<group>"; };
 		3557642E240D05BA001A49AE /* discolights-loop.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "discolights-loop.mov"; sourceTree = "<group>"; };
 		3557642F240D05BA001A49AE /* disco-sound.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = "disco-sound.m4a"; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 				3543947F2407B8FF00999611 /* StoneNode.swift */,
 				35576436240D0734001A49AE /* PictureNode.swift */,
 				35576438240D09DF001A49AE /* DiscoBallNode.swift */,
+				35488FF8240E537D0032542B /* HintNode.swift */,
 			);
 			path = Nodes;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 				353BE47923F30A74000A2026 /* SKNode+Extensions.swift in Sources */,
 				353BE47B23F30A74000A2026 /* SKTEffects.swift in Sources */,
 				3591B76F23FD1263002EE9F9 /* BlockNode.swift in Sources */,
+				35488FF9240E537D0032542B /* HintNode.swift in Sources */,
 				353BE47323F30A74000A2026 /* SKColor+Extensions.swift in Sources */,
 				35CBB6CE23E20A580015B2DA /* CatNode.swift in Sources */,
 				35CBB6CB23E2088E0015B2DA /* BedNode.swift in Sources */,
